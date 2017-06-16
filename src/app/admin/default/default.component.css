@@ -1,0 +1,26 @@
+.mdl-data-table {
+    table-layout:fixed;
+    width:100%; 
+}
+.order{
+    transition: all 0.7s;
+    -webkit-transition: all 0.7s;
+    cursor: pointer;
+}
+.order.down{
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+.orderby{
+    cursor: pointer;
+}
+.disabled{
+    color:#C3C3C3;
+    transition: all 0.7s;    
+}
+.visible{
+    transition: opacity 1s;
+    opacity: 0;
+}
+

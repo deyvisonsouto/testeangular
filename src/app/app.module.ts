@@ -5,18 +5,33 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DefaultComponent } from './admin/default/default.component';
+import { DefaultService } from './shared/default.service';
+import { TableComponent } from './shared/table/table.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from '@angular/material';
+import { MDL } from './shared/mdl';
+import { TesteNovoComponent } from './teste-novo/teste-novo.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DefaultComponent,
+    TableComponent,
+    TesteNovoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    DefaultService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,33 @@
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Welcome</h2>
+  </div>
+  <div class="mdl-card__media">
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="orderby" (click)="orderby(item,$event)" *ngFor="let item of columns">
+            {{item}}
+            <i [ngClass]="{'order':true, 'fa':true,'fa-arrow-up': true, 'disabled':(orderbycurrent != item), 'down':  (orderbycurrent == item && orderbydirection ==1)}"></i>
+            <i [ngClass]="{'visible':(orderbycurrent == item)}" class="fa fa-arrow-down disabled"></i>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data">
+          <td>
+            {{item.Nome}}
+          </td>
+          <td>
+            {{item.Idade}}
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+      </tfoot>
+    </table>
+  </div>
+  <div class="mdl-card__menu mdl-card--border">
+    <button (click)="add()" md-mini-fab><md-icon>add</md-icon></button>
+  </div>
+</div>
