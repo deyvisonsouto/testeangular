@@ -1,8 +1,8 @@
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Welcome</h2>
+    <h2 class="mdl-card__title-text">Teste</h2>
   </div>
-  <div class="mdl-card__media">
+  <div class="mdl-card__media" style="width:100%;">
     <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
       <thead>
         <tr>
@@ -26,6 +26,13 @@
       <tfoot>
       </tfoot>
     </table>
+    <div>
+      <button md-button [disabled]="page==0" (click)="primeiraPagina()"><i class="fa fa-fast-backward"></i></button>
+      <button md-button [disabled]="page==0" (click)="paginaAnterior()"><i class="fa fa-backward"></i></button>
+      <button md-button [disabled]="page==pagecount" (click)="proximaPagina()" ><i class="fa fa-forward"></i></button>
+      <button md-button [disabled]="page==pagecount" (click)="ultimaPagina()"><i class="fa fa-fast-forward"></i></button>
+    </div>
+
   </div>
   <div class="mdl-card__menu mdl-card--border">
     <button (click)="add()" md-mini-fab><md-icon>add</md-icon></button>

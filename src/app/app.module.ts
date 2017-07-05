@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,23 +14,36 @@ import { MaterialModule } from '@angular/material';
 import { MDL } from './shared/mdl';
 import { TesteNovoComponent } from './teste-novo/teste-novo.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+import { TimeComponent } from './time/time.component';
+import { TimeService } from './time/time.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     DefaultComponent,
     TableComponent,
-    TesteNovoComponent
+    TesteNovoComponent,
+    TimeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   providers: [
-    DefaultService
+    DefaultService,
+    TimeService
   ],
   bootstrap: [AppComponent]
 })
