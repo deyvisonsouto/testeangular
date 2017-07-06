@@ -13,11 +13,11 @@ export class TimeService {
 
   }
 
-  getTime(): FirebaseListObservable<Time[]> {
+  getTime(): FirebaseListObservable<any[]> {
     return this.db.list('/times');
   }
   save(time: Time) {
-    return this.db.object('/times').update(time);
+    return this.db.list('/times').push(time);
   }
 
 }

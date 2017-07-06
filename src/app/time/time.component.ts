@@ -11,7 +11,7 @@ import { Time } from './time';
 })
 export class TimeComponent implements OnInit {
 
-  times: FirebaseListObservable<Time[]>;
+  times: FirebaseListObservable<any[]>;
   form: FormGroup;
 
   constructor(private timeService: TimeService, private fb: FormBuilder) {
@@ -23,12 +23,10 @@ export class TimeComponent implements OnInit {
 
   ngOnInit() {
     this.times = this.timeService.getTime();
+    this.times.subscribe(r => console.log(r));
   }
   save() {
-    console.log(this.form.value);
-    this.timeService.save(this.form.value).then(r => {
-      console.log(r);
-    });
+    this.timeService.save(this.form.value);
   }
 
 }
