@@ -20,6 +20,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { TimeComponent } from './time/time.component';
 import { TimeService } from './time/time.service';
+import { AnimaTesteComponent } from './anima-teste/anima-teste.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TimeService } from './time/time.service';
     DefaultComponent,
     TableComponent,
     TesteNovoComponent,
-    TimeComponent
+    TimeComponent,
+    AnimaTesteComponent
   ],
   imports: [
     BrowserModule,

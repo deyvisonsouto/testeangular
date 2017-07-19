@@ -1,3 +1,15 @@
 <p>
   teste-novo works! {{title}} testes
 </p>
+<div [formGroup]="form">
+  <md-input-container *ngIf="tipoCampo == 1">
+    <input type="text" formControlName="campo" mdInput placeholder="Favorite food" value="0">
+  </md-input-container>
+  <md-select formControlName="campo" *ngIf="tipoCampo == 2" placeholder="Favorite food">
+    <md-option *ngFor="let food of foods" [value]="food.value">
+      {{ food.viewValue }}
+    </md-option>
+  </md-select>
+</div>
+<button (click)="click()">Save</button>
+<input type="text" [(ngModel)]="tipoCampo" mdInput placeholder="Favorite food" value="0">
